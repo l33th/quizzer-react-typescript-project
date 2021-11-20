@@ -2,16 +2,16 @@ import React from 'react';
 
 type QCardProps = {
   question: string;
-  answer: string[];
+  answers: string[];
   callback: any;
-  userAnswer: string;
+  userAnswer: any;
   questionNr: number;
   totalQuestions: number;
 };
 
 const QuestionCard: React.FC<QCardProps> = ({
   question,
-  answer,
+  answers,
   callback,
   userAnswer,
   questionNr,
@@ -22,7 +22,16 @@ const QuestionCard: React.FC<QCardProps> = ({
       {' '}
       Question: {questionNr} / {totalQuestions}
     </p>
-    <p dangerouslySetInnerHTML={{__html: question}} />
+    <p dangerouslySetInnerHTML={{ __html: question }} />
+    <div>
+      {answers.map(answer => (
+        <div>
+          <button disabled={userAnswer} onClick={callback}>
+            <span dangerouslySetInnerHTML={{ __html: answer }} />
+          </button>
+        </div>
+      ))}
+    </div>
   </div>
 );
 
