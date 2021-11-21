@@ -5,7 +5,7 @@ export type Question = {
   category: string;
   correct_answer: string;
   difficulty: string;
-  incorrect_answer: string[]; // this was originally a string but gave an error
+  incorrect_answers: string[];
   question: string;
   type: string;
 };
@@ -24,10 +24,10 @@ export const fetchQuizQuestions = async (
 ) => {
   const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
   const data = await (await fetch(endpoint)).json();
-  return data.map((question: Question) => ({
+  return data.results.map((question: Question) => ({
     ...question,
-    answer: shuffleArray([
-      ...question.incorrect_answer, // this gave an error when its type was string instead of string[]
+    answers: shuffleArray([
+      ...question.incorrect_answers,
       question.correct_answer,
     ]),
   }));
