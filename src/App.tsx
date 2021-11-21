@@ -24,7 +24,8 @@ const App = () => {
   const [score, setScore] = useState(initialValue);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
+  console.log(questions);
+  // console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
 
   const startTrivia = async () => {
     setLoading(true);
