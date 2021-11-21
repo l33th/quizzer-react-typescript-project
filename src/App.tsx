@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Anime Quiz</h1>
+      <h1>Quiz</h1>
       <button className="start" onClick={startTrivia}>
         Start
       </button>
