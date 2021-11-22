@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import BGImage from './images/nattu-adnan-unsplash.jpg';
+import BGImage from './images/quizzer-background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
   html {
