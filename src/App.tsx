@@ -47,6 +47,9 @@ const App = () => {
     if (!gameOver) {
       // User's answer
       const answer = e.currentTarget.value;
+      // Check answer compared to correct answer
+      const correct = questions[number].correct_answer === answer;
+      
     }
   };
 
