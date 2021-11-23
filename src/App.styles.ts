@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import BGImage from './images/quizzer-background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
@@ -21,21 +21,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// export const Wrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-//   > p {
-//     color: #fff;
-//   }
+  > p {
+    color: #fff;
+  }
 
-//   .score {
-//     color: #fff;
-//     font-size: 2rem;
-//     margin: 0;
-//   }
-
+  .score {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0;
+  }
+`;
 //   h1 {
 //     font-family: Fascinate Inline;
 //     background-image: linear-gradient(180deg, #fff, #87f1ff);
