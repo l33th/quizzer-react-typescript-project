@@ -2,7 +2,7 @@ import React from 'react';
 // Types
 import { AnswerObject } from '../App';
 // Styles
-// import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
+import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
 
 type QCardProps = {
   question: string;
@@ -21,7 +21,7 @@ const QuestionCard: React.FC<QCardProps> = ({
   questionNr,
   totalQuestions,
 }) => (
-  <div>
+  <Wrapper>
     <p className="number">
       {' '}
       Question: {questionNr} / {totalQuestions}
@@ -29,15 +29,19 @@ const QuestionCard: React.FC<QCardProps> = ({
     <p dangerouslySetInnerHTML={{ __html: question }} />
     <div>
       {answers.map(answer => (
-        <div key={answer}>
+        <ButtonWrapper
+          key={answer}
+          correct={userAnswer?.correctAnswer === answer} // optional chaining
+          userClicked={userAnswer?.answer === answer} // no error with optional chaining
+        >
           {/* <button disabled={userAnswer ? true : false} value={answer} onClick={callback}> */}
           <button disabled={!!userAnswer} value={answer} onClick={callback}>
             <span dangerouslySetInnerHTML={{ __html: answer }} />
           </button>
-        </div>
+        </ButtonWrapper>
       ))}
     </div>
-  </div>
+  </Wrapper>
 );
 
 export default QuestionCard;

@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
   }
 
   .score {
-    color: #fff;
+    color: #ffb300;
     font-size: 2rem;
     margin: 0;
   }
@@ -67,4 +67,5 @@ export const Wrapper = styled.div`
   .start {
     max-width: 200px;
   }
+
 `;
