@@ -5,7 +5,9 @@ import QuestionCard from './components/QuestionCard';
 // Types
 import { QuestionState, Difficulty } from './API';
 // Styles
-import { GlobalStyle } from './App.styles';
+import { GlobalStyle, Wrapper } from './App.styles';
+// Logo
+import logo from '../src/images/quiz-logo.png';
 
 export type AnswerObject = {
   question: string;
@@ -78,8 +80,11 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <div>
-        <h1 style={{ color: 'white' }}>Quiz App</h1>
+      <Wrapper>
+        <h1>
+          <img src={logo} alt="" />
+        </h1>
+        {/* <h1>Quiz App</h1> */}
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startTrivia}>
             Start
@@ -105,7 +110,7 @@ const App = () => {
             Next Question
           </button>
         ) : null}
-      </div>
+      </Wrapper>
     </>
   );
 };
