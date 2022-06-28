@@ -7,6 +7,7 @@ import { QuestionState, Difficulty } from './API';
 // Styles
 import { GlobalStyle, Wrapper } from './App.styles';
 // Logo
+// @ts-ignore
 import logo from '../src/images/quiz-logo.png';
 
 export type AnswerObject = {
@@ -54,7 +55,7 @@ const App = () => {
       // Check answer compared to correct answer
       const correct = questions[number].correct_answer === answer;
       // Add score if answer is correct
-      if (correct) setScore(prev => prev + 1);
+      if (correct) setScore((prev: number) => prev + 1);
       // Save answer in the array for user answers
       const answerObject = {
         question: questions[number].question,
@@ -62,7 +63,7 @@ const App = () => {
         correct,
         correctAnswer: questions[number].correct_answer,
       };
-      setUserAnswers(prev => [...prev, answerObject]);
+      setUserAnswers((prev: any) => [...prev, answerObject]);
     }
   };
 
