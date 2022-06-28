@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   border: 2px solid #0085a3;
   padding: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   text-align: center;
 
   p {
@@ -19,6 +19,7 @@ type ButtonWrapperProps = {
   userClicked: boolean;
 };
 
+// @ts-ignore
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   transition: all 0.3s ease;
 
@@ -40,9 +41,9 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
         ? 'linear-gradient(90deg, #FF5656, #C16868)'
         : 'linear-gradient(90deg, #56ccff, #6eafb4)'};
     border: 3px solid #ffffff;
-    box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: #fff;
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   }
 `;

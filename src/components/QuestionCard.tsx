@@ -13,6 +13,7 @@ type QCardProps = {
   totalQuestions: number;
 };
 
+// @ts-ignore
 const QuestionCard: React.FC<QCardProps> = ({
   question,
   answers,
